@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body, html{
+    background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: orange;
+}
+
+/* HEADER */
+
+li {
+    list-style: none;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar .logo a{
+     font-size: 1rem;
+     font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .toggle-btn{
+    color: whitesmoke;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action-btn{
+    background-color: orange;
+    color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2s ease;
+
+}
+
+.action-btn:hover{
+    scale: 1.05;
+    color: whitesmoke;
+}
+
+.action-btn:active{
+    scale: 0.95;
+}
+.nav-links li {
+    margin: 0 30px;
+}
+
+header {
+    position: relative;
+    padding: 0 2 rem;
+}
+
+/* DROPDOWN MENU*/
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu .action-btn{
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-menu.open{
+    height: 220px;
+}
+
+/* HERO */
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: whitesmoke;
+    justify-content: center;
+
+}
+
+#hero h1{
+    font-size:  3rem;
+    margin-bottom: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px){
+
+    .navbar .logo{
+        margin-left: 10px;
+    }
+
+    .navbar .toggle-btn{
+        margin-right: 10px;
+    }
+    .nav-links,
+    .navbar .action-btn {
+        display: none;
+    }
+
+    .navbar .toggle-btn{
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu .action-btn{
+        display: block;
+    }
+}
+
+
+@media(max-width: 576px){
+    .dropdown-menu{
+        left: 2rem;
+        width: unset;
+    }
+}
